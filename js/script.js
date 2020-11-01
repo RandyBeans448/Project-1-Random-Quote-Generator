@@ -126,4 +126,9 @@ function printQuote() {
 
 printQuote();
 
+//setInterval calls every 25 seconds changing the background color and quote 
+
+setInterval(() => printQuote(), 25000);
+setInterval(() => getRandomColour(), 25000);
+
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
