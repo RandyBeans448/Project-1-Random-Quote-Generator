@@ -11,7 +11,7 @@ const quotes = [
       quote: "Better to remain silent and be thought a fool, then to speak out and remove all doubt.",
       source: "Abraham Lincoln",
       citation: "Speech",
-      year: "Unknown"
+      nation: "USA"
     },
 
   //Quote 2
@@ -20,7 +20,8 @@ const quotes = [
       quote: "I am so clever that sometimes I don't understand a single word of what I am saying.",
       source: "Oscar Wilde",
       citation: "Speech",
-      year: "1885"
+      year: "1885",
+      nation: "English" 
     },
 
   //Quote 3
@@ -29,7 +30,8 @@ const quotes = [
       quote: "Success is not final; failure is not fatal: It is the courage to continue that counts.",
       source: "Winston Churchill",
       citation: "Speech",
-      year: "1943"
+      year: "1943",
+      nation: "English" 
     },
 
   //Quote 4
@@ -112,8 +114,6 @@ in the HTML button ID so that the colour changes every time
 the quote button is clicked. 
 */
 
-
-
 function getRandomColour() {
 
     let red = Math.floor(Math.random() * 256 );
@@ -128,7 +128,6 @@ function getRandomColour() {
 
 }
 
-
 /*
 This function creates a random number which is as long as the
 array if quotes and then loops through the array and returns
@@ -136,7 +135,6 @@ a random result when called. I copied this and made slight alterations
 from the Objects in arrays practice sessions. I also had help from the
 treehouse community (Steven Parker is a nice man).
 */
-
 
 function getRandomQuote(quotes) {
 
@@ -149,7 +147,6 @@ function getRandomQuote(quotes) {
 }
 
 // Here I am calling the function so it activates.
-
 
 getRandomQuote(quotes);
 
@@ -169,14 +166,21 @@ function printQuote() {
   let htmlMessage = '';
   
   htmlMessage += '<span class="quote">' + printResult.quote + '</span>'
+  
   htmlMessage += '<span class="source">' + printResult.source + '</span>'
 
     if (printResult.citation) {
       htmlMessage += '<span class="citation">' + printResult.citation + '</span>'
     }
+
     if (printResult.year) {
       htmlMessage += '<span class="year">' + printResult.year + '</span>'
     }
+
+    if (printResult.nation) {
+      htmlMessage += '<span class="year">' + printResult.nation + '</span>'
+    }
+
 
   document.getElementById('quote-box').innerHTML = htmlMessage;
 
